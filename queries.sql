@@ -1,30 +1,11 @@
-SELECT 
-    MAX(LENGTH(location)) AS dlocation_length,
-    MAX(LENGTH(date)) AS ddate_length
-FROM covid_deaths;
-SELECT
-    MAX(LENGTH(location)) AS vlocation_length,
-    MAX(LENGTH(date)) AS vdate_length
-FROM covid_vaccinations;
-
 -- @block
+-- Creates indexes for most accessed columns
 CREATE INDEX idx_location_date ON covid_analysis.covid_deaths (location(33), date);
 CREATE INDEX idx_total_cases_total_deaths ON covid_analysis.covid_deaths (total_cases, total_deaths);
 CREATE INDEX idx_new_cases_new_deaths ON covid_analysis.covid_deaths (new_cases, new_deaths);
 CREATE INDEX idx_population ON covid_analysis.covid_deaths (population);
 CREATE INDEX idx_location_date ON covid_analysis.covid_vaccinations (location(33), date);
 CREATE INDEX idx_people_vaccinated_new_vaccinations ON covid_analysis.covid_vaccinations (people_vaccinated, new_vaccinations);
-
--- @block
-SELECT 
-    location,
-    date,
-    total_cases,
-    new_cases,
-    total_deaths,
-    population
-FROM covid_analysis.covid_deaths
-ORDER BY 1, 2;
 
 -- @block
 -- Death Rates (total cases/total deaths)
