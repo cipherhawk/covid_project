@@ -184,9 +184,6 @@ SELECT *,
 FROM vac_pop;
 
 -- @block
-SET profiling=1;
-
--- @block
 -- Vaccination rates over time
 WITH vac_pop (continent, location, date, population, vaccinated_individuals)
 AS (
@@ -207,9 +204,6 @@ SELECT *,
 CONCAT(ROUND(vaccinated_individuals/population* 100, 2), '%') AS vaccination_rate
 FROM vac_pop
 ORDER BY 2, 3;
-
--- @block
-SHOW profiles;
 
 -- @block
 -- Temp table: vaccinated_population
