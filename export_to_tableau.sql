@@ -25,7 +25,7 @@ ORDER BY 'Total deaths'
 SELECT 
     location AS Location,
     population AS Population,
-    MAX(total_cases) AS 'Total cases',
+    COALESCE(MAX(total_cases), 0) AS 'Total cases',
     CONCAT(ROUND(COALESCE(MAX(total_cases/population*100), 0), 2), '%') AS 'Infection rate'
 FROM covid_analysis.covid_deaths
 WHERE continent != ''
