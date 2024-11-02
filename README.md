@@ -1,5 +1,7 @@
 # COVID-19 data exploration
 
+Selected tables are exported to .csv and plugged into Tableau for visualization: [link to interactive dashboard](https://public.tableau.com/app/profile/cipherhawk/viz/COVID-19Dashboard_16880750097110/Dashboard)
+
 ## References
 Source: [Our World in Data: COVID-19 Data Explorer](https://ourworldindata.org/explorers/coronavirus-data-explorer)
 
